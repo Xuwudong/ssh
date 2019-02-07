@@ -1,8 +1,8 @@
 ### 注意点
- 使用了sessionFactory.getCurrentSession()获取session时，需要事务的支持；也就是说这段代码所在的方法要么被事务切面切中，要么在方法上面使用注解事务。可参考[链接](https://www.cnblogs.com/zeng1994/p/7778145.html)。
+ 使用了sessionFactory.getCurrentSession()获取session时，需要事务的支持；也就是说这段代码所在的方法要么使用声明式事务，要么在方法上面使用注解事务。可参考[链接](https://www.cnblogs.com/zeng1994/p/7778145.html)。
 
 
-   - 配事务切面
+   - 声明式事务：
    
 ```
 <!-- 通知 -->
@@ -44,7 +44,7 @@ public class PersonService {
 ```
 #修改root用户插件验证方式
 ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '123456';
-#刷新权限 
+#刷新权限
 FLUSH PRIVILEGES;
 ```
 
